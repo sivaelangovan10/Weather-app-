@@ -261,6 +261,10 @@ h1{
   #city-name {
     font-size: 1.5rem;
   }
+
+  #description{
+      font-size:.8rem;
+  }
 }
 
 /* Passing Clouds Background */
