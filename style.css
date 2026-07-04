@@ -1,0 +1,267 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-size: 400% 400%;
+    background: linear-gradient(130deg, #667eea 0%, #764ba2 50%, #bd7fc4 100%);
+    display: flex;
+    padding: 20px;
+    animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+.hidden{
+    display: none;
+}
+
+.container{
+    width: 100%;
+    max-width: 450px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: slide 0.8s cubic-bezier(0.47, 0, 0.745, 0.715);
+    padding: 2.5rem 2rem;
+    
+}
+
+@keyframes slide{
+    from{
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+h1{
+    color: white;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.403);
+    animation: fadedown .8s .2s both;
+}
+
+@keyframes fadedown{
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.input-box{
+    display: flex;
+    gap: 1.8rem;
+    margin-bottom: 2rem;
+    animation: fadedown .8s .4s both;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#city-input{
+    flex: 1;
+    padding: 1rem 1.5rem;
+    background: rgba(0, 0, 0, 0.007);
+    color: white;
+    font-size: 1rem;
+    border-radius: 50px;
+    border: 2px solid rgba(0, 0, 0, 0.6);
+    outline: none;
+    transition: all .8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 75%;
+    text-align: center;
+}
+
+#city-input::placeholder{
+    color: rgba(211, 194, 194, 0.6);
+    text-align: center;
+}
+
+#city-input:focus{
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.504);
+    background: rgba(0, 0, 0, 0.1);
+    transform: scale(1.2);
+}
+
+#get-weather{
+    padding: 1rem 1.8rem;
+    background: linear-gradient(135deg, #f093fb 0% , #f093fb 50% ,  #f5576c  100%);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgb(246, 87, 108, .5);
+    transition: all .8s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    white-space: nowrap;
+    width: 200px;
+    align-items: center;
+
+
+}
+
+#get-weather:hover{
+    transform: translateY(-3px) scale(1.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.471);
+}
+
+#get-weather:active{
+    transform: translateY(-2px) scale(1);
+
+}
+
+#weather-info{
+    text-align: center;
+    color: white;
+    padding: 1.5rem;
+    background:rgba(7, 7, 7, 0.247) ;
+    border-radius: 30px;
+    border: 2px solid rgba(0, 0, 0, 0.486);
+    animation: pop 0.6s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+@keyframes pop{
+    from{
+        opacity: 0;
+        transform: scale(.5);
+    }
+
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#city-name{
+    font-size: 2.5rem;
+    font-weight: 500;
+    white-space: nowrap;
+    margin-bottom: 2rem;
+    animation: fadeup 0.6s 0.2s both;
+}
+
+#temperature{
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 1rem 0 ;
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.279);
+    animation: fadeup 0.6s 0.3s both;
+    white-space: nowrap;
+}
+
+#temperature::after{
+    content: ' C';
+    font-size: 1.5rem;
+    vertical-align: super;
+    white-space: nowrap;
+}
+
+#description{
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    opacity: 0.9;
+    animation: fadeup 0.6s 0.4s both;
+    white-space: nowrap;
+
+}
+
+@keyframes fadeup{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+}
+
+#error-msg{
+    text-align: center;
+    color: white;
+    background: rgba(255,87,87,0.7);
+    border: 1px solid rgba(0, 0, 0, 0.503);
+    border-radius: 30px;
+    padding: 1.2rem;
+    animation: shake .6s infinite;
+}
+
+@keyframes shake{
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-10px);
+    }
+    75% {
+        transform: translateX(10px);
+    }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 2rem 1.5rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  .input-box {
+    flex-direction: column;
+  }
+  
+  #get-weather {
+    width: 75%;
+  }
+  
+  #temperature {
+    font-size: 1.5rem;
+  }
+  
+  #city-name {
+    font-size: 1.5rem;
+  }
+}
+
+
+
