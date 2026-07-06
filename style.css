@@ -113,7 +113,7 @@ h1{
 
 #city-input:focus{
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.504);
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.6);
     transform: scale(1.2);
 }
 
